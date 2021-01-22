@@ -1,0 +1,36 @@
+﻿@page
+@model TasKrumIo.Pages.BoardList.AddCardContentModel
+
+@{
+    ViewData["Title"] = "AddCardContent";
+}
+
+<div class="container">
+    <h1 class="main-text text-center mt-5">Add Card Content</h1>
+
+    <h4>CardContents</h4>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <h3 class="second-text"> Card Content</h3>
+                    <textarea asp-for="CardContents.CardContent"></textarea>
+                    <span asp-validation-for="CardContents.CardContent" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index">Back to List</a>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

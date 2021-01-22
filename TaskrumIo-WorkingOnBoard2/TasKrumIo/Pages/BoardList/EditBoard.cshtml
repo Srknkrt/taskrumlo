@@ -1,0 +1,36 @@
+﻿@page
+@model TasKrumIo.Pages.BoardList.EditBoardModel
+
+@{
+    ViewData["Title"] = "EditBoard";
+}
+<div class="container mt-5">
+    <h1 class="main-text text-center">Edit Board</h1>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Board.Id" />
+                <div class="form-group">
+                   <h4 style=" color:#744cca">Edit Board Name </h4>
+                    <input asp-for="Board.BoardName" class="form-control" />
+                    <span asp-validation-for="Board.BoardName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn "style=" background-color:#744cca; color:#fff"  />
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div>
+        <a class="btn" style=" background-color:#744cca; color:#fff" asp-page="BoardList">Back to List</a>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

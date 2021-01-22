@@ -1,0 +1,35 @@
+﻿@page
+@model TasKrumIo.Pages.BoardList.CardContentsDetailsModel
+
+@{
+    ViewData["Title"] = "CardContentsDetails";
+}
+<div class="container mt-5">
+
+    <h1 class="main-text text-center ">Card Details</h1>
+
+    <div class="mb-5 mt-5">
+       
+        <hr />
+        <div class="row">
+            <div class="col-sm-2">
+                <h3 class=" second-text"> @Html.DisplayNameFor(model => model.Cards.CardName)</h3>
+            </div>
+            <div class="col-sm-10 ">
+                <h3 class="text-dark"> @Html.DisplayFor(model => model.Cards.CardName) </h3>
+            </div>
+            <div class="col-sm-2">
+                <h3 class="second-text">@Html.DisplayNameFor(model => model.Cards.CardContents.CardContent) </h3>
+            </div>
+            <div class="col-sm-10">
+                <p class="second-text">Predicted Time :  @Convert.ToInt32(Model.Cards.CardName.Length / 10) </p>
+            </div>
+            
+        </div>
+        
+    </div>
+    <div>
+        <a class="btn" style="background-color:#9172d3; color:#fff" asp-page="EditCardDetails" asp-route-id="@Model.Cards.Id">Edit</a> |
+        <a asp-page="BoardList" class="btn" style="background-color:#9172d3; color:#fff">Back to List</a>
+    </div>
+</div>

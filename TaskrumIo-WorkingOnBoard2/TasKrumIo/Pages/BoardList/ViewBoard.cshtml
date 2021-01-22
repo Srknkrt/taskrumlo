@@ -1,0 +1,70 @@
+﻿@page
+@model TasKrumIo.Pages.BoardList.ViewBoardModel
+@{
+    Layout = "_ViewBoardLayout";
+}
+<div class="container">
+    <div class="m-4 row justify-content-center">
+
+        <a asp-page="AddColumn" asp-route-id="@Model.Board.Id" class="btn btn-success">Add New Column</a>
+
+    </div>
+
+    <div class="row text-center justify-content-lg-start" asp-validation-summary="All">
+
+
+
+        @if (Model.Columns.Count() > 0)
+        {
+
+            foreach (var item in Model.Board.Columns)
+            {
+               
+        <div class="col-lg-3 col-sm-12 p-3 m-3 border row">
+            <h2 class="text-secondary mb-4 col-12">@item.ColumnName</h2>
+
+
+            @if (item.Cards.Count() > 0)
+            {
+                foreach (var itemCard in item.Cards)
+                {
+                    <div class="col-4">
+                        <a asp-page="CardContentsDetails"
+                           asp-route-id="@itemCard.Id">  <h5 class="text-secondary mb-4 border">@itemCard.CardName</h5></a>
+                    </div>
+
+                    <div class="col-7">
+                        <a class="btn btn-danger" asp-page="DeleteCard" asp-route-id="@itemCard.Id">Delete Task</a>
+                    </div>
+                }
+
+            }
+            else
+            {
+                <p>There is No Cards Please Add New</p>
+            }
+
+
+
+
+
+            <a asp-page="AddCards" asp-route-Id="@item.Id" type="submit" class="btn btn-secondary m-1"> Add Card</a>
+
+
+            <a asp-page="DeleteColumn" asp-route-Id="@item.Id" class="btn btn-danger m-1"> Remove </a>
+
+        </div>
+
+            }
+
+
+        }
+        else
+        {
+            <p>No Columns</p>
+        }
+
+
+    </div>
+</div>
+

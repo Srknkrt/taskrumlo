@@ -1,0 +1,33 @@
+﻿@page
+@model TasKrumIo.Pages.BoardList.BoardListModel
+
+@{
+    ViewData["Title"] = "BoardList";
+}
+
+
+    <div class="container mt-5">
+        <h1 class="text-center main-text">Your Board List</h1>
+
+        <p class="text-center">
+            <a class="btn btn-home" asp-page="CreateNewBoard">Create New Board</a>
+        </p>
+
+        <div class="row mt-5">
+            @foreach (var item in Model.Board)
+            {
+
+                <div class="col-lg-3 col-sm-12 justify-content-center text-center  ml-5 mb-3 p-3">
+                    <a asp-page="ViewBoard" asp-route-id="@item.Id"><img src="~/images/img2.jpg" class="card-img" style="width:60%" /></a>
+                    <h4 style="color:#7c60b7; font-size:23px;">@Html.DisplayFor(modelItem => item.BoardName)</h4>
+                    <a class="btn btn-primary" asp-page="./EditBoard" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-secondary" asp-page="ViewBoard" asp-route-id="@item.Id"> Details </a>
+                    <a class="btn btn-danger" asp-page="./DeleteBoard" asp-route-id="@item.Id"> Delete </a>
+                </div>
+            }
+        </div>
+
+
+    </div>
+
+

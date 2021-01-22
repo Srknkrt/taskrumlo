@@ -1,0 +1,48 @@
+﻿@page
+@model AboutUs
+@{
+    ViewData["Title"] = "About Us";
+}
+<div class="text-center" style="padding-bottom:20px;">
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>About Us</h1>
+        </div>
+    </section>
+</div>
+
+<h3 class="main-text p-1" style="text-align:center"> Our Services </h3>
+<hr />
+<div class="container">
+    <div class="row p-5">
+        <div class="col-6">
+            <h4 class="second-text text-center">This Is Heading</h4>
+            <img class="card-img" src="~/images/img1.jpg" />
+            <p class="paragraph-text p-3">
+                İnvidunt sanctus nisl ea amet kasd et ea sanctus dolor elit vel invidunt erat eirmod tempor magna consetetur
+                aliquyam autem rebum odio volutpat invidunt
+            </p>
+        </div>
+        <div class="col-6">
+            <h4 class="second-text text-center">This Is Heading</h4>
+            <img class="card-img" src="~/images/img3.jpg" />
+            <p class="paragraph-text p-3">
+                İnvidunt sanctus nisl ea amet kasd et ea sanctus dolor elit vel invidunt erat eirmod tempor magna consetetur
+                aliquyam autem rebum odio volutpat invidunt
+            </p>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<h3 class="main-text text-center">Are You Intrested In Our Services ?</h3>
+<hr />
+
+<div class="row p-5 justify-content-center">
+    <div>
+        <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-secondary"
+           style="background-color:#7C60B7; border:none ; padding:20px; font-size:20px">Register Now...</a>
+    </div>
